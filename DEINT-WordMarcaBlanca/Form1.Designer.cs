@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.navBar = new System.Windows.Forms.MenuStrip();
-            this.archivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuArchivo = new System.Windows.Forms.ToolStripMenuItem();
             this.btnNuevo = new System.Windows.Forms.ToolStripMenuItem();
             this.btnAbrir = new System.Windows.Forms.ToolStripMenuItem();
             this.btnGuardar = new System.Windows.Forms.ToolStripMenuItem();
             this.btnSalir = new System.Windows.Forms.ToolStripMenuItem();
-            this.ediciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuEdicion = new System.Windows.Forms.ToolStripMenuItem();
             this.btnCortar = new System.Windows.Forms.ToolStripMenuItem();
             this.btnCopiar = new System.Windows.Forms.ToolStripMenuItem();
             this.btnPegar = new System.Windows.Forms.ToolStripMenuItem();
@@ -44,30 +44,33 @@
             this.barraOpciones = new System.Windows.Forms.ToolStrip();
             this.tb = new System.Windows.Forms.RichTextBox();
             this.footer = new System.Windows.Forms.StatusStrip();
+            this.toolStripTextBox1 = new System.Windows.Forms.ToolStripTextBox();
+            this.ventanaFuentes = new System.Windows.Forms.FontDialog();
+            this.ventanaColor = new System.Windows.Forms.ColorDialog();
             this.navBar.SuspendLayout();
             this.SuspendLayout();
             // 
             // navBar
             // 
             this.navBar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.archivoToolStripMenuItem,
-            this.ediciónToolStripMenuItem});
+            this.menuArchivo,
+            this.menuEdicion});
             this.navBar.Location = new System.Drawing.Point(0, 0);
             this.navBar.Name = "navBar";
             this.navBar.Size = new System.Drawing.Size(800, 24);
             this.navBar.TabIndex = 0;
             this.navBar.Text = "menuStrip1";
             // 
-            // archivoToolStripMenuItem
+            // menuArchivo
             // 
-            this.archivoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menuArchivo.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btnNuevo,
             this.btnAbrir,
             this.btnGuardar,
             this.btnSalir});
-            this.archivoToolStripMenuItem.Name = "archivoToolStripMenuItem";
-            this.archivoToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
-            this.archivoToolStripMenuItem.Text = "Archivo";
+            this.menuArchivo.Name = "menuArchivo";
+            this.menuArchivo.Size = new System.Drawing.Size(60, 20);
+            this.menuArchivo.Text = "Archivo";
             // 
             // btnNuevo
             // 
@@ -95,39 +98,45 @@
             this.btnSalir.Text = "Salir";
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
-            // ediciónToolStripMenuItem
+            // menuEdicion
             // 
-            this.ediciónToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menuEdicion.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btnCortar,
             this.btnCopiar,
             this.btnPegar,
             this.btnBuscar,
             this.btnFuente,
             this.btnColor});
-            this.ediciónToolStripMenuItem.Name = "ediciónToolStripMenuItem";
-            this.ediciónToolStripMenuItem.Size = new System.Drawing.Size(58, 20);
-            this.ediciónToolStripMenuItem.Text = "Edición";
+            this.menuEdicion.Enabled = false;
+            this.menuEdicion.Name = "menuEdicion";
+            this.menuEdicion.Size = new System.Drawing.Size(58, 20);
+            this.menuEdicion.Text = "Edición";
             // 
             // btnCortar
             // 
             this.btnCortar.Name = "btnCortar";
             this.btnCortar.Size = new System.Drawing.Size(180, 22);
             this.btnCortar.Text = "Cortar";
+            this.btnCortar.Click += new System.EventHandler(this.btnCortar_Click);
             // 
             // btnCopiar
             // 
             this.btnCopiar.Name = "btnCopiar";
             this.btnCopiar.Size = new System.Drawing.Size(180, 22);
             this.btnCopiar.Text = "Copiar";
+            this.btnCopiar.Click += new System.EventHandler(this.btnCopiar_Click);
             // 
             // btnPegar
             // 
             this.btnPegar.Name = "btnPegar";
             this.btnPegar.Size = new System.Drawing.Size(180, 22);
             this.btnPegar.Text = "Pegar";
+            this.btnPegar.Click += new System.EventHandler(this.btnPegar_Click);
             // 
             // btnBuscar
             // 
+            this.btnBuscar.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripTextBox1});
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(180, 22);
             this.btnBuscar.Text = "Buscar";
@@ -137,6 +146,7 @@
             this.btnFuente.Name = "btnFuente";
             this.btnFuente.Size = new System.Drawing.Size(180, 22);
             this.btnFuente.Text = "Fuente";
+            this.btnFuente.Click += new System.EventHandler(this.btnFuente_Click);
             // 
             // btnColor
             // 
@@ -169,6 +179,12 @@
             this.footer.TabIndex = 3;
             this.footer.Text = "statusStrip1";
             // 
+            // toolStripTextBox1
+            // 
+            this.toolStripTextBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.toolStripTextBox1.Name = "toolStripTextBox1";
+            this.toolStripTextBox1.Size = new System.Drawing.Size(100, 23);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -191,12 +207,12 @@
         #endregion
 
         private System.Windows.Forms.MenuStrip navBar;
-        private System.Windows.Forms.ToolStripMenuItem archivoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem menuArchivo;
         private System.Windows.Forms.ToolStripMenuItem btnNuevo;
         private System.Windows.Forms.ToolStripMenuItem btnAbrir;
         private System.Windows.Forms.ToolStripMenuItem btnGuardar;
         private System.Windows.Forms.ToolStripMenuItem btnSalir;
-        private System.Windows.Forms.ToolStripMenuItem ediciónToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem menuEdicion;
         private System.Windows.Forms.ToolStripMenuItem btnCortar;
         private System.Windows.Forms.ToolStripMenuItem btnCopiar;
         private System.Windows.Forms.ToolStripMenuItem btnPegar;
@@ -206,6 +222,9 @@
         private System.Windows.Forms.ToolStrip barraOpciones;
         private System.Windows.Forms.RichTextBox tb;
         private System.Windows.Forms.StatusStrip footer;
+        private System.Windows.Forms.ToolStripTextBox toolStripTextBox1;
+        private System.Windows.Forms.FontDialog ventanaFuentes;
+        private System.Windows.Forms.ColorDialog ventanaColor;
     }
 }
 

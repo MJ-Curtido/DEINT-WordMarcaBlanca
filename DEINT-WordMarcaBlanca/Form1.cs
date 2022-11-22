@@ -40,6 +40,35 @@ namespace DEINT_WordMarcaBlanca
                     tb.Text = "";
                 }
             }
+
+            menuEdicion.Enabled = true;
+        }
+
+        private void btnCortar_Click(object sender, EventArgs e)
+        {
+            tb.Select();
+            tb.Cut();
+        }
+
+        private void btnCopiar_Click(object sender, EventArgs e)
+        {
+            tb.Select();
+            tb.Copy();
+        }
+
+        private void btnPegar_Click(object sender, EventArgs e)
+        {
+            tb.Paste();
+        }
+
+        private void btnFuente_Click(object sender, EventArgs e)
+        {
+            /*
+            if (ventanaFuentes.ShowDialog = ventanaFuentes.)
+            {
+
+            }
+            */
         }
     }
 }
