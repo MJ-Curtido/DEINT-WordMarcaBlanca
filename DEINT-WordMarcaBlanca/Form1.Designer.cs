@@ -39,14 +39,16 @@
             this.btnCopiar = new System.Windows.Forms.ToolStripMenuItem();
             this.btnPegar = new System.Windows.Forms.ToolStripMenuItem();
             this.btnBuscar = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripTextBox1 = new System.Windows.Forms.ToolStripTextBox();
             this.btnFuente = new System.Windows.Forms.ToolStripMenuItem();
             this.btnColor = new System.Windows.Forms.ToolStripMenuItem();
             this.barraOpciones = new System.Windows.Forms.ToolStrip();
             this.tb = new System.Windows.Forms.RichTextBox();
             this.footer = new System.Windows.Forms.StatusStrip();
-            this.toolStripTextBox1 = new System.Windows.Forms.ToolStripTextBox();
             this.ventanaFuentes = new System.Windows.Forms.FontDialog();
             this.ventanaColor = new System.Windows.Forms.ColorDialog();
+            this.ventanaGuardar = new System.Windows.Forms.SaveFileDialog();
+            this.ventanaAbrir = new System.Windows.Forms.OpenFileDialog();
             this.navBar.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -84,12 +86,14 @@
             this.btnAbrir.Name = "btnAbrir";
             this.btnAbrir.Size = new System.Drawing.Size(180, 22);
             this.btnAbrir.Text = "Abrir";
+            this.btnAbrir.Click += new System.EventHandler(this.btnAbrir_Click);
             // 
             // btnGuardar
             // 
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(180, 22);
             this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // btnSalir
             // 
@@ -141,6 +145,12 @@
             this.btnBuscar.Size = new System.Drawing.Size(180, 22);
             this.btnBuscar.Text = "Buscar";
             // 
+            // toolStripTextBox1
+            // 
+            this.toolStripTextBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.toolStripTextBox1.Name = "toolStripTextBox1";
+            this.toolStripTextBox1.Size = new System.Drawing.Size(100, 23);
+            // 
             // btnFuente
             // 
             this.btnFuente.Name = "btnFuente";
@@ -153,6 +163,7 @@
             this.btnColor.Name = "btnColor";
             this.btnColor.Size = new System.Drawing.Size(180, 22);
             this.btnColor.Text = "Color";
+            this.btnColor.Click += new System.EventHandler(this.btnColor_Click);
             // 
             // barraOpciones
             // 
@@ -170,6 +181,7 @@
             this.tb.Size = new System.Drawing.Size(776, 373);
             this.tb.TabIndex = 2;
             this.tb.Text = "";
+            this.tb.TextChanged += new System.EventHandler(this.tb_TextChanged);
             // 
             // footer
             // 
@@ -179,11 +191,9 @@
             this.footer.TabIndex = 3;
             this.footer.Text = "statusStrip1";
             // 
-            // toolStripTextBox1
+            // ventanaAbrir
             // 
-            this.toolStripTextBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.toolStripTextBox1.Name = "toolStripTextBox1";
-            this.toolStripTextBox1.Size = new System.Drawing.Size(100, 23);
+            this.ventanaAbrir.FileName = "ventanaAbrir";
             // 
             // Form1
             // 
@@ -196,7 +206,7 @@
             this.Controls.Add(this.navBar);
             this.MainMenuStrip = this.navBar;
             this.Name = "Form1";
-            this.Text = " WordMarcaBlanca";
+            this.Text = "WordMarcaBlanca";
             this.navBar.ResumeLayout(false);
             this.navBar.PerformLayout();
             this.ResumeLayout(false);
@@ -225,6 +235,8 @@
         private System.Windows.Forms.ToolStripTextBox toolStripTextBox1;
         private System.Windows.Forms.FontDialog ventanaFuentes;
         private System.Windows.Forms.ColorDialog ventanaColor;
+        private System.Windows.Forms.SaveFileDialog ventanaGuardar;
+        private System.Windows.Forms.OpenFileDialog ventanaAbrir;
     }
 }
 
